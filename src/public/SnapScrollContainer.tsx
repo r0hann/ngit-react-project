@@ -90,6 +90,10 @@ const SnapScrollContainer: React.FC<Props> = ({children}) => {
     };
   }, [focusedIndex, startTouch, isScrolling]);
 
+  const handleCardClick = (index: number) => {
+    setFocusedIndex(index);
+  };
+
   return (
     <div className="scroll-container" ref={scrollContainerRef}>
       {React.Children.map(children, (child, index) =>
@@ -97,6 +101,7 @@ const SnapScrollContainer: React.FC<Props> = ({children}) => {
           key: index,
           index: index,
           focusedIndex: focusedIndex,
+          onClick: () => handleCardClick(index)
         })
       )}
     </div>
