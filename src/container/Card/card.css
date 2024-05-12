@@ -1,6 +1,6 @@
 .card {
   width: 250px;
-  height: 250px;  
+  height: 250px;
   display: flex;
   border-radius: 20px;
   flex-direction: column;
@@ -8,26 +8,47 @@
   align-items: center;
   color: white;
   text-align: center;
-  padding: 20px;
-  background: linear-gradient(135deg, #FF9190, #FFC1A6);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  /* scroll-snap-align: center; */
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   margin-top: 40px;
   transform: scale(1);
   margin-bottom: 40px;
+  padding: 4px;
+  background: linear-gradient(135deg, #f2b7a8, #b65b85);
+  /* border-top: 4px solid #FFC1A6; */
 }
 
-.card::before {
+.card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #FF9190, #bb628b);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  /* scroll-snap-align: center; */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  padding: 10px;
+}
+
+.card-inner::after {
   content: '';
+  /* inset: 0; */
+  inset: 0;
   position: absolute;
-  bottom: 15%;
-  left: 10%;
-  width: 100px;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 2px;
+  border-radius: 18px;
+  border: 8px solid #bb628b;
+  border-top: 6px solid #bb628b96;
+  border-left: 8px solid #FFC1A6;
+  line-height: 1.1;
+  filter: drop-shadow(0.25rem 0.25rem 0.75rem #bb628b96) blur(5px);
+}
+
+.card-inner .card.sub-card {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.card-inner .card.sub-card:first-child {
+  margin-top: 0px;
 }
 
 .card:first-child {

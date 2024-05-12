@@ -58,6 +58,10 @@ body {
   scroll-padding: calc((100vh - 240px)/2);
 }
 
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
 .scroll-container > * {
   scroll-snap-align: start;
 }
