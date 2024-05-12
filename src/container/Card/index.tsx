@@ -7,7 +7,7 @@ interface CardProps {
   focusedIndex?: number;
   width?: string;
   height?: string;
-  onClick: (index:number) => void;
+  onClick?: (index:number) => void;
 }
 const Card: React.FC<CardProps> = ({ index, focusedIndex, height, onClick }) => {
   const getCardClassName = () => {
@@ -22,7 +22,7 @@ const Card: React.FC<CardProps> = ({ index, focusedIndex, height, onClick }) => 
       id={`card_${index}`}
       className={getCardClassName()}
       style={{ height }}
-      onClick={() => onClick(index ?? 0)}
+      onClick={onClick ? () => onClick(index ?? 0) : undefined}
     >
       <div className="card-inner">
         <SubCard height="100px" width="100%" />
